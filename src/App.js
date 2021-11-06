@@ -1,14 +1,27 @@
-import React from 'react';
 import { Layout } from 'antd';
+import React from 'react';
 import './App.less';
+import FooterBar from './Components/FooterBar';
+import NavBar from './Components/NavBar';
+import Overview from './Components/Overview';
 
-const { Header, Footer, Sider, Content } = Layout;
+
+
+
+
 const App = () => (
   <div className="App">
-    <Layout>
-  <Content align="center">hi</Content>
-  </Layout>
-  </div>
+
+    <Layout style={{ minHeight: '100vh' }}>
+      <NavBar />
+      <Layout>
+        <Overview />
+      </Layout>
+    </Layout>
+    <FooterBar />
+  </div >
+
+
 );
 
 export default App;
