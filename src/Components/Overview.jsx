@@ -1,51 +1,65 @@
-import React,{useEffect,useState} from 'react';
-import { Layout,Typography } from 'antd';
+import React, { useEffect, useState } from 'react';
+import { Layout, Typography } from 'antd';
+import ZilCard from './ZilCard';
+import TokensResults from './TokensResults';
 const { Content, Header } = Layout;
-const {Title}= Typography;
-const coingeckoEndpoint=`https://api.coingecko.com/api/v3/coins/zilliqa?localization=false&tickers=true&market_data=true&community_data=true&developer_data=true`
-
+const { Title } = Typography;
+const coingeckoEndpoint = `https://api.coingecko.com/api/v3/coins/zilliqa?localization=false&tickers=true&market_data=true&community_data=true&developer_data=true`
+const zilstreamEndpoint = `https://api.zilstream.com/tokens`
 
 
 
 function Overview() {
 
-const [getZilData, setZilData] = useState([]);
+    const [getZilData, setZilData] = useState([]);
+    const [getTokensData, setTokenData] = useState([]);
 
 
-    const fetchZil = async() =>
-{
-    try
-    {
-        const response = await fetch(coingeckoEndpoint);
-        const data = await response.json();
-        setZilData([data.market_data])
-        console.log(getZilData);
-    } catch (err)
-    {
-        console.log(err);
+    const fetchZil = async () => {
+        try {
+            const response = await fetch(coingeckoEndpoint);
+            const data = await response.json();
+            setZilData([data])
+            console.log(getZilData)
+        } catch (err) {
+            console.log(err);
+        }
     }
-}
 
-useEffect(() => {
-    fetchZil();
+    const fetchOtherTokens = async () => {
+        try {
+            const response = await fetch(zilstreamEndpoint);
+            const data = await response.json();
+            setTokenData([...data])
+            console.log(getTokensData)
+        } catch (err) {
+            console.log(err);
+        }
+    }
 
-}, []);
 
-const mapZilData = getZilData.map((data)=>
-{
-    return <p>{data.market_cap.usd}</p>
-})
+    useEffect(() => {
+        fetchZil();
+    }, []);
+
+    useEffect(() => {
+        fetchOtherTokens();
+    }, []);
+
 
     return (
         <>
             <Header className="headerbar" style={{ padding: 0 }} />
-            <Content style={{ margin: '0 16px' }}>
-       
-                <div className="content" style={{ padding: 24, minHeight: 360 }}>
-                <Title level={2} className="heading">Zilliqa Stats</Title>
-                Market Cap: {mapZilData}
+            <Content style={{ margin: '0 200px' }}>
+                <div className="content">
+                    <Title level={2} className="heading" style={{textAlign: "center"}}>Zilliqa Statistics</Title>
+                    <ZilCard fetched={getZilData} />
                 </div>
+                <Title level={2} className="heading" style={{textAlign: "center"}}>Zilliqa EcoSystem Tokens Statistics</Title>
+                <TokensResults fetched={getTokensData} />
             </Content>
+         
+          
         </>
 
 
