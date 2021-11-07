@@ -26,7 +26,7 @@ function NavBar() {
             </div>
             <Menu defaultSelectedKeys={['1']} mode="inline">
                 <Menu.Item key="1" icon={<HomeOutlined />}>
-                    Overview
+                    <Link to="Overview">Overview</Link>
                 </Menu.Item>
                 <Menu.Item key="2" icon={<DollarCircleOutlined />}>
                     Tokens
