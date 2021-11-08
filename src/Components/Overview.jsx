@@ -52,10 +52,10 @@ function Overview() {
             <Header className="headerbar" style={{ padding: 0 }} />
             <Content style={{ margin: '0 200px' }}>
                 <div className="content">
-                    <Title level={2} className="heading" style={{textAlign: "center"}}>Zilliqa Statistics</Title>
+                    <Title level={1} className="heading" style={{textAlign: "center"}}>Zilliqa Statistics</Title>
                     <ZilCard fetched={getZilData} />
                 </div>
-                <Title level={2} className="heading" style={{textAlign: "center"}}>Zilliqa EcoSystem Tokens Statistics</Title>
+                <Title level={1} className="heading" style={{textAlign: "center"}}>Zilliqa EcoSystem Tokens Statistics</Title>
                 <TokensResults fetched={getTokensData} />
             </Content>
          
