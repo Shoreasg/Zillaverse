@@ -1,10 +1,6 @@
-import { Typography, Row } from 'antd';
+import {Row } from 'antd';
 import React from 'react';
 import TokenCard from './TokenCard';
-
-
-
-const { Title } = Typography;
 
 
 function TokensResults(props) {
