@@ -32,7 +32,7 @@ function NavBar() {
                 <Link to="Tokens">Tokens</Link>
                 </Menu.Item>
                 <Menu.Item key="3" icon={<ReadOutlined />}>
-                <Link to="News">News</Link>
+                <Link to="Tweets">Tweets</Link>
                 </Menu.Item>
             </Menu>
         </Sider>

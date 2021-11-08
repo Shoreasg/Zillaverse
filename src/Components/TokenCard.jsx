@@ -11,9 +11,13 @@ const gridStyle = {
 };
 
 function TokenCard(props) {
+
+    
+   
+
     return (
         <Col span={12}>
-            <Card title={<Title level={3} style={{textAlign: "center"}} >{props.title}</Title>}>
+            <Card title={<Title level={3} style={{textAlign: "center"}} >{props.title} {props.vetted ? "(Unvetted)":""}</Title>}>
             <Card.Grid style={gridStyle} hoverable={false}><Title level={4}>Price:</Title>${props.price.toFixed(6)}</Card.Grid>
             <Card.Grid style={gridStyle} hoverable={false}><Title level={4}>Price Change(24h):</Title>${props.changed24h.toFixed(6)}</Card.Grid>
             <Card.Grid style={gridStyle} hoverable={false}><Title level={4}>Trading Volume:</Title>${props.dailyVolume.toFixed(6)}</Card.Grid>

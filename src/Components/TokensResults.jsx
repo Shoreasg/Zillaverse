@@ -22,6 +22,7 @@ function TokensResults(props) {
             changePercent30D={data.market_data.change_percentage_30d}
             totalSupply={data.market_data.total_supply}
             circulatingSupply={data.current_supply}
+            vetted={data.unvetted}
             key={index}
         />
 
