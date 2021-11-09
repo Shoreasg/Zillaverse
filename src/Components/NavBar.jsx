@@ -29,10 +29,10 @@ function NavBar() {
                     <Link to="Overview">Overview</Link>
                 </Menu.Item>
                 <Menu.Item key="2" icon={<DollarCircleOutlined />}>
-                    Tokens
+                    <Link to="Tokens">Tokens</Link>
                 </Menu.Item>
                 <Menu.Item key="3" icon={<ReadOutlined />}>
-                    News
+                    <Link to="Tweets">Tweets</Link>
                 </Menu.Item>
             </Menu>
         </Sider>

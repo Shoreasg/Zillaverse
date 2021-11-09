@@ -20,7 +20,6 @@ function Overview() {
             const response = await fetch(coingeckoEndpoint);
             const data = await response.json();
             setZilData([data])
-            console.log(getZilData)
         } catch (err) {
             console.log(err);
         }
@@ -31,7 +30,6 @@ function Overview() {
             const response = await fetch(zilstreamEndpoint);
             const data = await response.json();
             setTokenData([...data])
-            console.log(getTokensData)
         } catch (err) {
             console.log(err);
         }
@@ -49,17 +47,18 @@ function Overview() {
 
     return (
         <>
-            <Header className="headerbar" style={{ padding: 0 }} />
+            <Header className="headerbar" />
+            <Title level={1} className="heading" style={{ textAlign: "center" }}>Welcome to Zilverse! This page allows you to keep track of the Zilliqa Ecosystem</Title>
             <Content style={{ margin: '0 200px' }}>
                 <div className="content">
-                    <Title level={1} className="heading" style={{textAlign: "center"}}>Zilliqa Statistics</Title>
+                    <Title level={2} className="heading" >Zilliqa Statistics</Title>
                     <ZilCard fetched={getZilData} />
                 </div>
-                <Title level={1} className="heading" style={{textAlign: "center"}}>Zilliqa EcoSystem Tokens Statistics</Title>
+                <Title level={2} className="heading" style={{ textAlign: "center" }}>Zilliqa EcoSystem Tokens Statistics</Title>
                 <TokensResults fetched={getTokensData} />
             </Content>
-         
-          
+
+
         </>
 
 

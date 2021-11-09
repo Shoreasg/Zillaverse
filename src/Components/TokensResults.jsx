@@ -1,17 +1,11 @@
-import { Typography, Row } from 'antd';
+import { Row } from 'antd';
 import React from 'react';
 import TokenCard from './TokenCard';
-
-
-
-const { Title } = Typography;
 
 
 function TokensResults(props) {
 
     const TokensData = props.fetched.map((data, index) => {
-
-
         return <TokenCard
             title={data.name}
             image={data.icon}
@@ -26,6 +20,7 @@ function TokensResults(props) {
             changePercent30D={data.market_data.change_percentage_30d}
             totalSupply={data.market_data.total_supply}
             circulatingSupply={data.current_supply}
+            vetted={data.unvetted}
             key={index}
         />
 
@@ -34,10 +29,8 @@ function TokensResults(props) {
     })
     return (
         <>
-            <Row gutter={[48,48]}>
-              
-                    {TokensData}
-            
+            <Row gutter={[48, 48]}>
+                {TokensData}
             </Row>
 
         </>
