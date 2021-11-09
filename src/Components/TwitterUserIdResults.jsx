@@ -1,26 +1,19 @@
-import {Row } from 'antd';
+import { Row } from 'antd';
 import React from 'react';
-import TwitterCard from './TokenCard';
+import TwitterCard from './TwitterCard';
 
 
-function TokensResults(props) {
+function TwitterUserIdResults(props) {
 
-    const TokensData = props.fetched.map((data, index) => {
+    const TwitterUserIdData = props.user.map((userdata) => {
 
-
-        return <
-         
-        />
-
-
-
+        return <TwitterCard userId={userdata.id} name={userdata.name} />
     })
+
     return (
         <>
-            <Row gutter={[48,48]}>
-              
-                    {TokensData}
-            
+            <Row gutter={[48, 48]}>
+                {TwitterUserIdData}
             </Row>
 
         </>
@@ -28,4 +21,4 @@ function TokensResults(props) {
     );
 }
 
-export default TokensResults;
+export default TwitterUserIdResults;

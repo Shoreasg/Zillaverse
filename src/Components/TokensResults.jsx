@@ -1,4 +1,4 @@
-import {Row } from 'antd';
+import { Row } from 'antd';
 import React from 'react';
 import TokenCard from './TokenCard';
 
@@ -6,8 +6,6 @@ import TokenCard from './TokenCard';
 function TokensResults(props) {
 
     const TokensData = props.fetched.map((data, index) => {
-
-
         return <TokenCard
             title={data.name}
             image={data.icon}
@@ -31,10 +29,8 @@ function TokensResults(props) {
     })
     return (
         <>
-            <Row gutter={[48,48]}>
-              
-                    {TokensData}
-            
+            <Row gutter={[48, 48]}>
+                {TokensData}
             </Row>
 
         </>

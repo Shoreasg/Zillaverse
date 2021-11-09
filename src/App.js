@@ -19,9 +19,9 @@ const App = () => (
       <Layout>
         <Routes>
           <Route path="/" element={<Overview />} />
-          <Route path="Overview" element={<Overview />} />
-          <Route path="Tokens" element={<Tokens />} />
-          <Route path="Tweets" element={<Tweets />} />
+          <Route path="/Overview" element={<Overview />} />
+          <Route path="/Tokens" element={<Tokens />} />
+          <Route path="/Tweets" element={<Tweets />} />
           <Route path="*" element={<Navigate to="Overview" />} />
         </Routes>
       </Layout>

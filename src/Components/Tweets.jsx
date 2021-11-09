@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { Layout, Typography } from 'antd';
+import TwitterUserIdResults from './TwitterUserIdResults';
 const { Content, Header } = Layout;
 const { Title } = Typography;
 
 const twitterUserNames =
 {
+    zil: "zilliqa",
     xcad: "XcademyOfficial",
     duck: "ZilDuck",
     portal: "PackagePortal",
@@ -40,22 +42,8 @@ const twitterUserNames =
     button: "bridge_button"
 }
 
-// const twitterEndpoint = `https://api.twitter.com/2/users/by?usernames=${twitterUserNames.xcad},${twitterUserNames.duck}
-// ,${twitterUserNames.portal},${twitterUserNames.xsgd},${twitterUserNames.Lunr},${twitterUserNames.zilswap},${twitterUserNames.score}
-// ,${twitterUserNames.blox},${twitterUserNames.carbon},${twitterUserNames.demonster},${twitterUserNames.Unifees},${twitterUserNames.zilstream}
-// ,${twitterUserNames.zilpay},${twitterUserNames.Oki},${twitterUserNames.SpardaWallet},${twitterUserNames.consult},${twitterUserNames.shards}
-// ,${twitterUserNames.Redc},${twitterUserNames.yoda},${twitterUserNames.zyro},${twitterUserNames.zwall},${twitterUserNames.recap}
-// ,${twitterUserNames.gary},${twitterUserNames.pillar},${twitterUserNames.bolt},${twitterUserNames.pele},${twitterUserNames.elon}
-// ,${twitterUserNames.mambo},${twitterUserNames.zilsurvey},${twitterUserNames.zilliqaAds},${twitterUserNames.zilchess}
-// ,${twitterUserNames.zillex},${twitterUserNames.button}`
 
-
-const getProxyURL = (endPoint) =>
-    `https://shrill-cloud-4f83.wenjie-teo.workers.dev/${endPoint}?ga_proxy=`;
-const apiBaseURL = "api.twitter.com/2/users/by";
-const access_token = "Bearer AAAAAAAAAAAAAAAAAAAAALYVVgEAAAAAHrndQsvCIoQEr7B8dbSR7k3i8m0%3DYKklGOuWZvKnOs8Ii5KWJdUhGNoiUCLtFrutkwM2FXjKSNJmyk"
-
-const apiEndPoint = `?usernames=${twitterUserNames.xcad},${twitterUserNames.duck}
+const query = `${twitterUserNames.zil},${twitterUserNames.xcad},${twitterUserNames.duck}
 ,${twitterUserNames.portal},${twitterUserNames.xsgd},${twitterUserNames.Lunr},${twitterUserNames.zilswap},${twitterUserNames.score}
 ,${twitterUserNames.blox},${twitterUserNames.carbon},${twitterUserNames.demonster},${twitterUserNames.Unifees},${twitterUserNames.zilstream}
 ,${twitterUserNames.zilpay},${twitterUserNames.Oki},${twitterUserNames.SpardaWallet},${twitterUserNames.consult},${twitterUserNames.shards}
@@ -65,7 +53,11 @@ const apiEndPoint = `?usernames=${twitterUserNames.xcad},${twitterUserNames.duck
 ,${twitterUserNames.zillex},${twitterUserNames.button}`
 
 
-const URL = getProxyURL(apiEndPoint) + apiBaseURL;
+const url = `https://shrill-cloud-4f83.wenjie-teo.workers.dev/2/users/by?usernames=${query}&ga_proxy=api.twitter.com`;
+const access_token = "Bearer AAAAAAAAAAAAAAAAAAAAAO5yVgEAAAAAECiNgKrTqRADKHJpENMLoA1fgWQ%3DdoKkWlfWfHILqAsH8c1kmWUIGUaU9eu8rYHnkRB5NZzlzYVjZE"
+
+
+
 
 const options =
 {
@@ -83,10 +75,10 @@ function Tweets() {
 
     const fetchId = async () => {
         try {
-            const response = await fetch(URL,options);
-            const data = await response.text();
-            setUserId([data])
-            console.log(data)
+            const response = await fetch(url, options);
+            const data = await response.json();
+            let openArray = [data.data];
+            setUserId(...openArray)
         } catch (err) {
             console.log(err);
         }
@@ -100,13 +92,12 @@ function Tweets() {
     return (
         <>
             <Header className="headerbar" />
-            <Title level={1} className="heading" style={{ textAlign: "center" }}>Keep track of the latest News and Tweets from the Zilliqa Ecosystem</Title>
+            <Title level={1} className="heading" style={{ textAlign: "center" }}>Keep track of the latest Tweets from the Zilliqa Ecosystem</Title>
             <Content style={{ margin: '0 200px' }}>
                 <div className="content">
-                    <Title level={2} className="heading" >Latest Tweets</Title>
                     <div className="centerContent">
                         <div className="selfCenter standardWidth">
-
+                            <TwitterUserIdResults user={getUserId} />
                         </div>
                     </div>
                 </div>

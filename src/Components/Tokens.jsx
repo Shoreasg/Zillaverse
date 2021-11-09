@@ -3,9 +3,8 @@ import React from 'react';
 
 
 
-function Tokens()
-{
-    return(
+function Tokens() {
+    return (
         <p>This is working</p>
     )
 }
