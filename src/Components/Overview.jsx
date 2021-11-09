@@ -20,7 +20,6 @@ function Overview() {
             const response = await fetch(coingeckoEndpoint);
             const data = await response.json();
             setZilData([data])
-            console.log(getZilData)
         } catch (err) {
             console.log(err);
         }
@@ -31,7 +30,6 @@ function Overview() {
             const response = await fetch(zilstreamEndpoint);
             const data = await response.json();
             setTokenData([...data])
-            console.log(getTokensData)
         } catch (err) {
             console.log(err);
         }

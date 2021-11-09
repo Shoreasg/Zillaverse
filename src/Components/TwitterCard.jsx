@@ -5,9 +5,6 @@ const { Title } = Typography;
 
 function TwitterCard(props) {
 
-
-    console.log(props)
-
     return (
         <Col span={12}>
 

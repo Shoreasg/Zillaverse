@@ -5,9 +5,9 @@ import TwitterCard from './TwitterCard';
 
 function TwitterUserIdResults(props) {
 
-    const TwitterUserIdData = props.user.map((userdata) => {
+    const TwitterUserIdData = props.user.map((userdata,index) => {
 
-        return <TwitterCard userId={userdata.id} name={userdata.name} />
+        return <TwitterCard userId={userdata.id} name={userdata.name} key={index}/>
     })
 
     return (

@@ -54,7 +54,7 @@ const query = `${twitterUserNames.zil},${twitterUserNames.xcad},${twitterUserNam
 
 
 const url = `https://shrill-cloud-4f83.wenjie-teo.workers.dev/2/users/by?usernames=${query}&ga_proxy=api.twitter.com`;
-const access_token = "Bearer AAAAAAAAAAAAAAAAAAAAAO5yVgEAAAAAECiNgKrTqRADKHJpENMLoA1fgWQ%3DdoKkWlfWfHILqAsH8c1kmWUIGUaU9eu8rYHnkRB5NZzlzYVjZE"
+const access_token = process.env.REACT_APP_Twitter_KEY;
 
 
 
