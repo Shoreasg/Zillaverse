@@ -1,14 +1,15 @@
 import { Row } from 'antd';
 import React from 'react';
-import TokenCard from './TokenCard';
+import OverviewCard from './OverviewCard';
 
 
-function TokensResults(props) {
+function OverviewResults(props) {
 
     const TokensData = props.fetched.map((data, index) => {
-        return <TokenCard
+        return <OverviewCard
             title={data.name}
             image={data.icon}
+            symbol={data.symbol}
             price={data.rate_usd}
             changed24h={data.market_data.change_percentage_24h}
             dailyVolume={data.market_data.daily_volume}
@@ -38,4 +39,4 @@ function TokensResults(props) {
     );
 }
 
-export default TokensResults;
+export default OverviewResults;
