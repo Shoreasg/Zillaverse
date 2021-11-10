@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Layout, Typography } from 'antd';
 import ZilCard from './ZilCard';
-import TokensResults from './TokensResults';
+import OverviewResults from './OverviewResults';
 const { Content, Header } = Layout;
 const { Title } = Typography;
 const coingeckoEndpoint = `https://api.coingecko.com/api/v3/coins/zilliqa?localization=false&tickers=true&market_data=true&community_data=true&developer_data=true`
@@ -38,10 +38,12 @@ function Overview() {
 
     useEffect(() => {
         fetchZil();
+        return () =>{ setZilData([])};
     }, []);
 
     useEffect(() => {
         fetchOtherTokens();
+        return () =>{ setTokenData([])};
     }, []);
 
 
@@ -55,7 +57,7 @@ function Overview() {
                     <ZilCard fetched={getZilData} />
                 </div>
                 <Title level={2} className="heading" style={{ textAlign: "center" }}>Zilliqa EcoSystem Tokens Statistics</Title>
-                <TokensResults fetched={getTokensData} />
+                <OverviewResults fetched={getTokensData} />
             </Content>
 
 
