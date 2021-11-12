@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Layout, Typography } from 'antd';
 import TokenResults from './TokenResults';
-const { Content, Header } = Layout;
+const { Content } = Layout;
 const { Title } = Typography;
 const coingeckoEndpoint=
 {zil:`https://api.coingecko.com/api/v3/coins/zilliqa?tickers=false&market_data=false`,
@@ -54,7 +54,6 @@ function Tokens() {
                 fetch(coingeckoEndpoint.recap),
                 fetch(coingeckoEndpoint.elons),
             ])
-
             const data = await Promise.all(response.map(res=> res.json()))
             setTokensData(data);
         } catch (err) {
@@ -70,19 +69,10 @@ function Tokens() {
 
     return (
         <>
-            <Header className="headerbar" />
             <Title level={1} className="heading" style={{ textAlign: "center" }}>Find out more about the coins by clicking on the card</Title>
             <Content style={{ margin: '0 200px' }}>
-                <div className="content">
-                    <div className="centerContent">
-                        <div className="selfCenter standardWidth">
                        <TokenResults tokendata={getTokensData}/>
-                        </div>
-                    </div>
-                </div>
             </Content>
-
-
         </>
     )
 }
