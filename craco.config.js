@@ -34,6 +34,7 @@ module.exports = {
               '@table-selected-row-color': '#036F7D',
               '@table-selected-row-bg': '#036f7d',
               '@table-expanded-row-bg': '#036f7d',
+              "@border-color-split": "#036F7D"
             },
             javascriptEnabled: true,
           },

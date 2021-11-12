@@ -94,13 +94,7 @@ function Tweets() {
             <Header className="headerbar" />
             <Title level={1} className="heading" style={{ textAlign: "center" }}>Keep track of the latest Tweets from the Zilliqa Ecosystem</Title>
             <Content style={{ margin: '0 200px' }}>
-                <div className="content">
-                    <div className="centerContent">
-                        <div className="selfCenter standardWidth">
-                            <TwitterUserIdResults user={getUserId} />
-                        </div>
-                    </div>
-                </div>
+                <TwitterUserIdResults user={getUserId} />
             </Content>
 
 
