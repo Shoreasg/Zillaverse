@@ -5,26 +5,28 @@ import { Line } from '@ant-design/charts';
 
 
 
-function CoinChart()
+function CoinChart(props)
 {
 
-    const data = [
-        { year: '1991', value: 3 },
-        { year: '1992', value: 4 },
-        { year: '1993', value: 3.5 },
-        { year: '1994', value: 5 },
-        { year: '1995', value: 4.9 },
-        { year: '1996', value: 6 },
-        { year: '1997', value: 7 },
-        { year: '1998', value: 9 },
-        { year: '1999', value: 13 },
-      ];
+
+
+  const mapData= props.Chartdata.map((data)=>
+  {
+    let mydate= new Date((data[0]))
+    let getDate = mydate.getDate();
+    let getMonth = mydate.toLocaleString("en-us",{month: "short"});
+    return {date: `${getDate}-${getMonth}`, price: data[1]}
+  })
+
+  console.log(mapData)
+  const data = mapData
+
       const config = {
         data,
-        xField: 'year',
-        yField: 'value',
+        xField: 'date',
+        yField: 'price',
         point: {
-          size: 3,
+          size: 2,
           shape: 'diamond',
         },
     };

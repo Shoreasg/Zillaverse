@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Layout, Typography } from 'antd';
 import TwitterUserIdResults from './TwitterUserIdResults';
-const { Content, Header } = Layout;
+const { Content} = Layout;
 const { Title } = Typography;
 
 const twitterUserNames =
@@ -91,7 +91,6 @@ function Tweets() {
 
     return (
         <>
-            <Header className="headerbar" />
             <Title level={1} className="heading" style={{ textAlign: "center" }}>Keep track of the latest Tweets from the Zilliqa Ecosystem</Title>
             <Content style={{ margin: '0 200px' }}>
                 <TwitterUserIdResults user={getUserId} />
