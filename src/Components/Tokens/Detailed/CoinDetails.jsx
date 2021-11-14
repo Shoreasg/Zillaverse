@@ -1,8 +1,8 @@
 import { useParams } from 'react-router';
 import React, { useEffect, useState } from 'react';
 import CoinResults from './CoinResults';
-import ChartResults from './ChartResults';
-import CoinTweet from './CoinTweet';
+import ChartResults from '../Chart/ChartResults';
+import CoinTweet from '../Tweets/CoinTweet';
 let today = Date.now();
 
 

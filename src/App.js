@@ -7,7 +7,7 @@ import NavBar from './Components/Layout/NavBar';
 import Tweets from './Components/Tweets/Tweets';
 import Overview from './Components/Overview/Overview';
 import Tokens from './Components/Tokens/Tokens';
-import CoinDetails from './Components/Tokens/CoinDetails';
+import CoinDetails from './Components/Tokens/Detailed/CoinDetails';
 const { Header } = Layout; 
 
 
