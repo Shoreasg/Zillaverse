@@ -2,12 +2,12 @@ import { Layout} from 'antd';
 import React from 'react';
 import { Route, Routes, Navigate } from "react-router-dom";
 import './App.less';
-import FooterBar from './Components/FooterBar';
-import NavBar from './Components/NavBar';
-import Tweets from './Components/Tweets';
-import Overview from './Components/Overview';
-import Tokens from './Components/Tokens';
-import CoinDetails from './Components/CoinDetails';
+import FooterBar from './Components/Layout/FooterBar';
+import NavBar from './Components/Layout/NavBar';
+import Tweets from './Components/Tweets/Tweets';
+import Overview from './Components/Overview/Overview';
+import Tokens from './Components/Tokens/Tokens';
+import CoinDetails from './Components/Tokens/CoinDetails';
 const { Header } = Layout; 
 
 
