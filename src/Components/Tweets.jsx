@@ -73,18 +73,19 @@ function Tweets() {
     const [getUserId, setUserId] = useState([]);
 
 
-    const fetchId = async () => {
-        try {
-            const response = await fetch(url, options);
-            const data = await response.json();
-            let openArray = [data.data];
-            setUserId(...openArray)
-        } catch (err) {
-            console.log(err);
-        }
-    }
+
 
     useEffect(() => {
+        const fetchId = async () => {
+            try {
+                const response = await fetch(url, options);
+                const data = await response.json();
+                let openArray = [data.data];
+                setUserId(...openArray)
+            } catch (err) {
+                console.log(err);
+            }
+        }
         fetchId();
     }, []);
 
