@@ -11,7 +11,7 @@ function TwitterCard(props) {
                     && props.name === "UFF Sports" ? "Score" : props.name}</Title>
             <TwitterTimelineEmbed sourceType="profile"
                 userId={props.userId}
-                options={{ height: 400, width: 600 }}
+                options={{ height: 1000}}
                 noFooter
                 noHeader
                 noScrollbar
