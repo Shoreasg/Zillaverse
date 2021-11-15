@@ -72,7 +72,6 @@ const options =
 function Tweets() {
 
     const [getUserId, setUserId] = useState([]);
-    
     let navigate = useNavigate();
 
 
