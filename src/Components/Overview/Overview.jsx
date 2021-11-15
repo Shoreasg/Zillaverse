@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { Layout, Typography } from 'antd';
+import { Layout, Typography,Button, Space } from 'antd';
 import ZilCard from './ZilCard';
 import OverviewResults from './OverviewResults';
+import { useNavigate } from 'react-router-dom';
 const { Content } = Layout;
 const { Title } = Typography;
 
@@ -12,11 +13,7 @@ function Overview() {
 
     const [getZilData, setZilData] = useState([]);
     const [getTokensData, setTokenData] = useState([]);
-
-
-
-
-
+    let navigate = useNavigate()
 
     useEffect(() => {
         const coingeckoEndpoint = `https://api.coingecko.com/api/v3/coins/zilliqa?localization=false&tickers=true&market_data=true&community_data=true&developer_data=true`
@@ -51,6 +48,13 @@ function Overview() {
     }, []);
 
 
+    function handleNextClick() {
+        navigate("/Tokens")
+    }
+    function handleBackClick() {
+        navigate("/Tweets")
+    }
+
     return (
         <>
             <Title level={1} className="heading" style={{ textAlign: "center" }}>Welcome to Zilverse! This page allows you to keep track of the Zilliqa Ecosystem</Title>
@@ -60,6 +64,10 @@ function Overview() {
                 <Title level={2} className="heading" style={{ textAlign: "center" }}>Zilliqa EcoSystem Tokens Statistics</Title>
                 <OverviewResults fetched={getTokensData} />
             </Content>
+            <Space size={1500}>
+                <Button type="primary" onClick={handleBackClick} size={"small"}>To Tweets</Button>
+                <Button type="primary" onClick={handleNextClick} size={"small"}>To Tokens</Button>
+            </Space>
         </>
 
 

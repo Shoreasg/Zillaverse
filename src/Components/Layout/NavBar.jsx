@@ -24,7 +24,7 @@ function NavBar() {
             <div className="logo" >
                 <Title level={4} style={{ textAlign: 'center' }} >{`ZilVerse`}</Title>
             </div>
-            <Menu defaultSelectedKeys={['1']} mode="inline">
+            <Menu  mode="inline" selectable={false}>
                 <Menu.Item key="1" icon={<HomeOutlined />}>
                     <Link to="Overview">Overview</Link>
                 </Menu.Item>

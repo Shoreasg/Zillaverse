@@ -6,9 +6,6 @@ import CoinTweet from '../Tweets/CoinTweet';
 let today = Date.now();
 
 
-console.log(today)
-
-
 function CoinDetails() {
     const { id } = useParams();
     const [getCoinData, setCoinData] = useState([]);

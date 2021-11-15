@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { Layout, Typography } from 'antd';
+import { Layout, Typography, Button, Space } from 'antd';
 import TwitterUserIdResults from './TwitterUserIdResults';
+import { useNavigate } from 'react-router-dom';
 const { Content} = Layout;
 const { Title } = Typography;
 
@@ -71,7 +72,8 @@ const options =
 function Tweets() {
 
     const [getUserId, setUserId] = useState([]);
-
+    
+    let navigate = useNavigate();
 
 
 
@@ -89,14 +91,23 @@ function Tweets() {
         fetchId();
     }, []);
 
+   function handleBackClick() {
+        navigate("/Tokens")
+    }
 
+    function handleNextClick() {
+        navigate("/Overview")
+    }
     return (
         <>
             <Title level={1} className="heading" style={{ textAlign: "center" }}>Keep track of the latest Tweets from the Zilliqa Ecosystem</Title>
             <Content style={{ margin: '0 200px' }}>
                 <TwitterUserIdResults user={getUserId} />
             </Content>
-
+            <Space size={1500}>
+                <Button type="primary" onClick={handleBackClick} size={"small"}>To Tokens</Button>
+                <Button type="primary" onClick={handleNextClick} size={"small"}>To Overview</Button>
+            </Space>
 
         </>
     )

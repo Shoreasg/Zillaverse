@@ -8,8 +8,6 @@ const { Title } = Typography;
 
 
 function CoinData(props) {
-   
-        console.log(props)
 
         return <>
             <Content style={{ margin: '0 200px' }}>
