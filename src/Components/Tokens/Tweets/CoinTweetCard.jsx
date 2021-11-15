@@ -4,8 +4,6 @@ import { TwitterTimelineEmbed } from 'react-twitter-embed';
 const { Title } = Typography;
 
 function CoinTweetCard(props) {
-
-    console.log(props)
     return (
         <>
             <Title level={2} className="heading" style={{ textAlign: "center" }}>Tweets by: {props.name

@@ -22,7 +22,7 @@ function NavBar() {
 
         <Sider collapsible collapsed={ShowCollapsed} onCollapse={onCollapse}>
             <div className="logo" >
-                <Title level={4} style={{ textAlign: 'center' }} >{`ZilVerse`}</Title>
+              <Link to="Overview">  <Title level={4} style={{ textAlign: 'center' }} >{`ZilVerse`}</Title></Link>
             </div>
             <Menu  mode="inline" selectable={false}>
                 <Menu.Item key="1" icon={<HomeOutlined />}>

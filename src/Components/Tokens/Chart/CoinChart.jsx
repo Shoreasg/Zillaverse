@@ -8,8 +8,6 @@ import { Line } from '@ant-design/charts';
 function CoinChart(props)
 {
 
-
-
   const mapData= props.Chartdata.map((data)=>
   {
     let mydate= new Date((data[0]))
@@ -18,7 +16,6 @@ function CoinChart(props)
     return {date: `${getDate}-${getMonth}`, price: data[1]}
   })
 
-  console.log(mapData)
   const data = mapData
 
       const config = {
