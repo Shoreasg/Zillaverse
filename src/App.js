@@ -24,7 +24,7 @@ const App = () => (
           <Route path="/Tokens/:id" element={<Suspense fallback={<Spin>Loading</Spin>} ><CoinDetails /></Suspense>} />
           <Route path="/Tokens" element={<Suspense fallback={<Spin>Loading</Spin>} ><Tokens /></Suspense>} />
           <Route path="/Tweets" element={<Suspense fallback={<Spin>Loading</Spin>} ><Tweets /></Suspense>} />
-          <Route path="*" element={<Suspense fallback={<Spin>Loading</Spin>} ><Overview /></Suspense>} />
+          <Route path="*" element={<Suspense fallback={<Spin>Loading</Spin>} ><Navigate to ="Overview" /></Suspense>} />
         </Routes>
       </Layout>
     </Layout>
