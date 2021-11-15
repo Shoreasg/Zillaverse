@@ -1,8 +1,10 @@
 import { useParams } from 'react-router';
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import CoinResults from './CoinResults';
 import ChartResults from '../Chart/ChartResults';
 import CoinTweet from '../Tweets/CoinTweet';
+import { Row ,Button} from 'antd';
 let today = Date.now();
 
 
@@ -10,7 +12,7 @@ function CoinDetails() {
     const { id } = useParams();
     const [getCoinData, setCoinData] = useState([]);
     const [getChartData, setChartData] = useState([]);
-
+    let navigate = useNavigate();
 
 
 
@@ -47,12 +49,20 @@ function CoinDetails() {
         return () => { setChartData([]) };
     }, []);
 
+    
+   function handleBackClick() {
+    navigate("/Tokens")
+    }
 
     return (
         <>
             <CoinResults fetchedDetails={getCoinData} />
             <ChartResults fetchedChart={getChartData} />
             <CoinTweet fetchedId={id} />
+            <Row justify="start">
+                <Button type="primary" onClick={handleBackClick} size={"small"}>To Tokens</Button>
+            </Row>
+
         </>
 
     );
