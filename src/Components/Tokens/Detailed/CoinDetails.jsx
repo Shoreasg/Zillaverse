@@ -14,10 +14,6 @@ function CoinDetails() {
     const [getChartData, setChartData] = useState([]);
     let navigate = useNavigate();
 
-
-
-    console.log(getChartData)
-
     useEffect(() => {
 
         const fetchCoin = async () => {

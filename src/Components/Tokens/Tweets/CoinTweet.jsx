@@ -6,7 +6,6 @@ const { Title } = Typography;
 
 
 function CoinTweet(props) {
-    console.log(props.fetchedId)
     const [getUserId, setUserId] = useState([]);
     let query = ""
 
@@ -24,7 +23,7 @@ function CoinTweet(props) {
         query = "UFFSports"
     if (props.fetchedId === "blox-token")
         query = "blox_sdk"
-    if (props.fetchedId === "ccarbon-labs")
+    if (props.fetchedId === "carbon-labs")
         query = "contact_carbon"
     if (props.fetchedId === "dmz-token")
         query = "de_monsters"
