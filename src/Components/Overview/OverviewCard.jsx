@@ -19,9 +19,6 @@ const iconStyle = {
 
 function OverviewCard(props) {
 
-
-
-
     return (
         <Col span={12}>
             <Card title={<Title level={3} style={{ textAlign: "center" }} >{props.title}({props.symbol}) {props.vetted ? "(Unvetted)" : ""}</Title>} extra={<img src={props.image} style={iconStyle} alt={props.symbol}/>} >
