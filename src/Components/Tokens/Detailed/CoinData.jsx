@@ -32,8 +32,8 @@ function CoinData(props) {
                 <Col span={12}>
                     <Card>
                         <Statistic
-                            title={<Title level={4} >All time high / All time low</Title>}
-                            value={`$${props.ath}/ $${props.atl}`}
+                            title={<Title level={4} >All time high | All time low</Title>}
+                            value={`$${props.ath} | $${props.atl}`}
                             valueStyle={{ color: '#036F7D' }}
 
 
@@ -45,7 +45,7 @@ function CoinData(props) {
                         <Statistic
                             title={<Title level={4} >24h low | 24 high</Title>}
                             value={`$${props.atl24h === undefined ? "N/A" : props.atl24h} | $${props.ath24h === undefined ? "N/A" : props.ath24h}`}
-                            valueStyle={props.atl24h === undefined ? { color: '#cf1322' } : { color: '#3f8600' }}
+                            valueStyle={props.atl24h === undefined ? { color: '#cf1322' } : { color: '#036F7D' }}
                         />
                     </Card>
                 </Col>
