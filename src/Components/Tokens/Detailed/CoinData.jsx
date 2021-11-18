@@ -8,6 +8,7 @@ const { Title } = Typography;
 
 
 function CoinData(props) {
+    console.log(props)
     return <>
         <Content style={{ margin: '0 200px' }}>
             <div className="content">
@@ -146,7 +147,7 @@ function CoinData(props) {
                     <Card>
                         <Statistic
                             title={<Title level={4}>Total Supply</Title>}
-                            value={(props.totalsupply === null ? "N/A" : props.totalsupply) && (props.name === "governance ZIL" ? "N/A" : props.totalsupply)}
+                            value={(props.totalsupply === null || props.totalsupply === 722700)  ? "N/A" : props.totalsupply}
                             valueStyle={{ color: '#036F7D' }}
                             suffix={(props.totalsupply === null) || (props.symbol==="gzil") ? "" : props.symbol}
                         />
