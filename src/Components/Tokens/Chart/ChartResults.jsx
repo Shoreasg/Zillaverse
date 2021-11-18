@@ -15,7 +15,7 @@ function ChartResults(props) {
     return (
         <>
             <Title level={3} className="heading" style={{  margin: '10px 200px' }}>Price Chart(USD)</Title>
-            <Content style={{ width: 1500, margin: '20px 150px' }}>
+            <Content style={{ width: 1200, margin: '20px 250px' }}>
                 {ChartData}
             </Content>
         </>

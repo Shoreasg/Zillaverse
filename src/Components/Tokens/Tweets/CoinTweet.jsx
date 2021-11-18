@@ -83,7 +83,7 @@ function CoinTweet(props) {
     return (
         <>
             <Title level={1} className="heading" style={{ textAlign: "center" }}>Keep track of the latest Tweets from the project</Title>
-            <Content style={{ margin: '0 200px' }}>
+            <Content style={{ margin: '0 400px' }}>
                 <CoinTweetUserIdResult user={getUserId} />
             </Content>
         </>
