@@ -15,3 +15,7 @@ Zilverse is an app that contains all of the latest information of the projects o
 1. Not Optimize for Mobile View
 2. Some Zilliqa projects are not listed inside
 3. Some twitters of the projects are missing
+
+# Note
+
+*No Backend is implemented for this project yet*
